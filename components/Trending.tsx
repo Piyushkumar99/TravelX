@@ -4,7 +4,7 @@ import One from "../public/images/1.jpg";
 import Two from "../public/images/2.jpg";
 import { AiFillStar } from "react-icons/ai";
 import { motion } from 'framer-motion';
-import NumberCounter from "number-counter";
+import CountUp from 'react-countup';
 
 const Trending = () => {
   return (
@@ -77,15 +77,15 @@ const Trending = () => {
           </p>
           <div className="flex items-start justify-start gap-5">
             <div className="my-5 flex-col">
-              <NumberCounter end={50} start={0} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
+              <CountUp end={50} start={0} delay={2} prefix="+" className='text-4xl font-bold text-gray-600' />
               <p className="text-xl font-medium text-gray-600">Destination</p>
             </div>
             <div className="my-5 flex-col">
-              <NumberCounter end={800} start={300} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
+              <CountUp end={800} start={0} delay={2} prefix="+" className='text-4xl font-bold text-gray-600' />
               <p className="text-xl font-medium text-gray-600">Tourists</p>
             </div>
             <div className="my-5 flex-col">
-              <NumberCounter end={300} start={50} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
+              <CountUp end={300} start={0} delay={2} prefix="+" className='text-4xl font-bold text-gray-600' />
               <p className="text-xl font-medium text-gray-600">Hotels</p>
             </div>
           </div>

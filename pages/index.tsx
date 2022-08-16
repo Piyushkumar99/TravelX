@@ -8,7 +8,6 @@ import Notify from '../components/Notify'
 import Trending from '../components/Trending'
 import Destination from '../components/Destination'
 import Services from '../components/Services'
-import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader';
 
 const Home: NextPage = () => {
 
