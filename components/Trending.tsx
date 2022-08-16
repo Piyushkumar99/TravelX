@@ -3,14 +3,24 @@ import Image from "next/image";
 import One from "../public/images/1.jpg";
 import Two from "../public/images/2.jpg";
 import { AiFillStar } from "react-icons/ai";
+import { motion } from 'framer-motion';
+import NumberCounter from "number-counter";
 
 const Trending = () => {
   return (
     <div className="my-20 flex  items-center justify-center">
       {/* images section  */}
       <div className="flex w-11/12 flex-col items-center justify-center gap-4 p-5 md:ml-20 md:flex-row">
-        <div className="relative">
-          <Image
+        <motion.div className="relative" whileHover={{
+          position: 'relative',
+          zIndex: 1,
+          scale: [1, 1.2, 1.1],
+          rotate: [0, 10, -10, 0],
+          transition: {
+            duration: .2
+          }
+        }}>
+          <Image 
             src={One}
             alt="first"
             width={400}
@@ -28,8 +38,16 @@ const Trending = () => {
               <p className=" pl-2 text-sm text-gray-500"> 5.0 (12 reviews)</p>
             </div>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div className="relative" whileHover={{
+          position: 'relative',
+          zIndex: 1,
+          scale: [1, 1.2, 1.1],
+          rotate: [0, 10, -10, 0],
+          transition: {
+            duration: .2
+          }
+        }}>
           <Image
             src={Two}
             alt="second"
@@ -48,7 +66,7 @@ const Trending = () => {
               <p className=" pl-2 text-sm text-gray-500"> 4.8 (48 reviews)</p>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* textual content */}
         <div className="flex-col items-start justify-start sm:mt-8 md:mt-0 md:ml-20">
           <h1 className="text-5xl font-bold text-gray-900">Best Of The Week</h1>
@@ -59,20 +77,20 @@ const Trending = () => {
           </p>
           <div className="flex items-start justify-start gap-5">
             <div className="my-5 flex-col">
-              <h1 className="text-4xl font-bold text-gray-600">50+</h1>
+              <NumberCounter end={50} start={0} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
               <p className="text-xl font-medium text-gray-600">Destination</p>
             </div>
             <div className="my-5 flex-col">
-              <h1 className="text-4xl font-bold text-gray-600">800+</h1>
+              <NumberCounter end={800} start={300} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
               <p className="text-xl font-medium text-gray-600">Tourists</p>
             </div>
             <div className="my-5 flex-col">
-              <h1 className="text-4xl font-bold text-gray-600">300+</h1>
+              <NumberCounter end={300} start={50} delay="5" preFix="+" className="text-4xl font-bold text-gray-600" />
               <p className="text-xl font-medium text-gray-600">Hotels</p>
             </div>
           </div>
-          <button className="h-14 w-auto rounded-xl bg-violet-600 px-8  text-white shadow-xl hover:bg-violet-900">
-            Find Place
+          <button className="h-14 w-auto rounded-xl bg-violet-600 px-8  text-white shadow-xl hover:bg-violet-900 group-hover:animate-bounce">
+            <p className='hover:scale-110 hover:transition-shadow'>Find Place</p>
           </button>
         </div>
       </div>
